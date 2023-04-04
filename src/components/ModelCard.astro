@@ -2,19 +2,21 @@
 const { img, name, bio, website } = Astro.props;
 ---
 
-<div class="bg-white rounded-lg shadow-md p-6 w-full md:w-3/4 lg:w-1/2 mx-auto">
+<div class="bg-white w-full">
   <div class="flex">
     <div class="w-1/2">
-      <img class="rounded-lg w-full h-auto" src={img} alt={name}>
+      <img class="rounded-lg w-full h-auto" src={img} alt={name} />
     </div>
     <div class="w-1/2 pl-4">
       <h2 class="text-lg font-semibold mb-2">{name}</h2>
-      <hr class="border-gray-300 mb-4">
+      <hr class="border-gray-300 mb-4" />
       <div class="text-sm text-gray-600 mb-4">
-        <slot/>
+        <slot />
       </div>
-      <a class="text-blue-600 hover:text-blue-800 font-medium" href={website.href}>{website.text}</a>
+      <a
+        class="text-blue-600 hover:text-blue-800 font-medium"
+        href={website.href}>{website.text}</a
+      >
     </div>
   </div>
 </div>
-

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import ModelCard from '../components/ModelCard.astro';
 ---
 
 <!DOCTYPE html>
@@ -13,37 +14,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1>Welcome to {SITE_TITLE}!</h1>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+				{SITE_DESCRIPTION}
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+			<section>
+				<ModelCard
+				  img="//handmodels.com/wp-content/uploads/2022/08/image-20.png"
+				  name="Adele Uddo"
+				  website={{
+	                            href: "http://adeleuddo.com/",
+                                    text: "adeleuddo.com",
+                                  }}
+				>	
+				  <p class="mb-2">Adele Uddo is a parts model who promotes businesses and doubles for celebrities in the United States. Uddo grew raised in a commune in California. She dropped out of school to seek a career as a model...</p>
+				</ModelCard>
+
+				<ModelCard
+				  img="//handmodels.com/wp-content/uploads/2022/08/1.jpg"
+				  name="Paul B"
+				  website={{
+				    href: "https://handmodel.co.uk",
+				    text: "handmodel.co.uk",
+				  }}
+				>
+				  <p class="mb-2">Paul B started his modelling career as a commercial model, appearing in adverts for brands like Right Guard and now he is one of the most successful male hand models in the world.</p>
+				  <p class="mb-2">His one-in-a-million hands have been featured in ads for De Beers, Haig Club, Sprite, Breitling, KFC, McDonald's, Nivea and Cartier.</p>
+				  <p class="mb-2">Paul B Portfolio of high-class brands under his belt gives him the reputation of a No1 hand throb.</p>
+                                </ModelCard>
+			</section>
 		</main>
 		<Footer />
 	</body>

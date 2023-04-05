@@ -3,28 +3,30 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header>
+<header x-data="{ open: false }">
   <div class="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
     <nav>
       <div class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
+        <a class="w-28 dark:hidden" href="/"
+          ><img alt={SITE_TITLE} src="/assets/logo.png" /></a
+        ><a class="hidden w-36 dark:block" href="/"
+          ><img alt="Logo" src="/assets/logo.png" /></a>
         <div
           class="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none md:flex-1"
         >
           <HeaderLink href="/">Home</HeaderLink>
           <HeaderLink href="/blog">Articles</HeaderLink>
+          <HeaderLink href="/contact">Contact</HeaderLink>
+          <HeaderLink
+            href="https://twitter.com/handmodelagency"
+            target="_blank"
+          >
+            Twitter
+          </HeaderLink>
         </div>
         <div class="flex items-center justify-between w-full md:w-auto">
-          <a class="w-28 dark:hidden" href="/"
-            ><span
-              style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;"
-              ><img alt={SITE_TITLE} src="/assets/logo.png" /></span
-            ></a
-          ><a class="hidden w-36 dark:block" href="/"
-            ><span
-              style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: relative;"
-              ><img alt="Logo" src="/assets/logo.png" /></span
-            ></a
-          ><button
+          <button
+            @click="open = !open"
             aria-label="Toggle Menu"
             class="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300"
             id="headlessui-disclosure-button-:r0:"
@@ -38,11 +40,20 @@ import { SITE_TITLE } from "../consts";
                 fill-rule="evenodd"
                 d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
               ></path></svg
-            ></button
-          >
-        </div><div
-          class="flex-col items-center justify-start order-2 hidden w-full md:flex md:flex-row md:w-auto md:flex-1 md:order-none"
+            ></button>
+        </div>
+        <div
+          x-show="open"
+          x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="flex-col items-center justify-start order-2 w-full md:hidden"
         >
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/blog">Articles</HeaderLink>
           <HeaderLink href="/contact">Contact</HeaderLink>
           <HeaderLink
             href="https://twitter.com/handmodelagency"

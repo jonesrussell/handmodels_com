@@ -1,0 +1,47 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+const { href, title, heroImage, pubDate } = Astro.props;
+---
+
+<div class="cursor-pointer group">
+  <div
+    class="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square"
+  >
+    <a href={href}
+      ><span
+        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
+        ><img
+          alt="Thumbnail"
+          src={heroImage}
+          decoding="async"
+          data-nimg="fill"
+          class="transition-all"
+          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+        /></span
+      ></a
+    >
+  </div>
+  <h2
+    class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-black"
+  >
+    <span
+      class="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]"
+      >{title}</span
+    >
+  </h2><div class="hidden">
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">
+      <a href={href}
+        >It is a cliche philosophical question, but it touches on something
+        fundamental about how humans relate to the world around them.
+      </a>
+    </p>
+  </div><div
+    class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400"
+  >
+    <span class="text-xs text-gray-300 dark:text-gray-600">•</span><time
+      class="text-sm"
+      datetime={pubDate}><FormattedDate date={pubDate} /></time
+    >
+  </div>
+</div>

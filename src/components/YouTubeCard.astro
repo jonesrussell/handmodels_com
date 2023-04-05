@@ -1,11 +1,13 @@
 ---
 import { YouTube } from "@astro-community/astro-embed-youtube";
+
+const { id } = Astro.props;
 ---
 
 <div class="cursor-pointer group">
   <div
-    class="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square"
+    class="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-video"
   >
-    <YouTube id="EUvgqItrt1c" />
+    <YouTube id={id} />
   </div>
 </div>

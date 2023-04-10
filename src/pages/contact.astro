@@ -43,6 +43,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
               <label for="message" class="block mb-2">Message:</label>
               <textarea id="message" name="message" class="w-full px-3 py-2 border rounded-md" rows="6" required></textarea>
             </div>
+            <div class="mb-6">
+              <label for="captcha" class="block mb-2">Captcha: <span id="captcha-question"></span></label>
+              <input type="text" id="captcha" name="captcha" class="w-full px-3 py-2 border rounded-md" required />
+            </div>
             <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-md">Send</button>
           </form>
           <div id="form-thankyou" class="hidden w-full max-w-lg mx-auto py-10 text-center text-green-600 font-bold">
@@ -52,16 +56,39 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </div>
     </main>
     <Footer />
-    <script>
+        <script>
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contact-form');
+        const captchaQuestion = document.getElementById('captcha-question');
+        const captcha = document.getElementById('captcha');
         const thankYou = document.getElementById('form-thankyou');
+
+        const generateCaptcha = () => {
+          const num1 = Math.floor(Math.random() * 10) + 1;
+          const num2 = Math.floor(Math.random() * 10) + 1;
+
+          captchaQuestion.textContent = `${num1} + ${num2} = `;
+          captcha.dataset.answer = num1 + num2;
+        };
+
+        const validateCaptcha = () => {
+          return parseInt(captcha.value) === parseInt(captcha.dataset.answer);
+        };
+
+        generateCaptcha();
 
         form.addEventListener('submit', async (event) => {
           event.preventDefault();
 
+          if (!validateCaptcha()) {
+            alert('Invalid captcha. Please try again.');
+            captcha.value = '';
+            generateCaptcha();
+            return;
+          }
+
           const formData = new FormData(form);
-                    const response = await fetch(form.action, {
+          const response = await fetch(form.action, {
             method: 'POST',
             body: formData,
           });

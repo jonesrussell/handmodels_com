@@ -2,7 +2,7 @@
 title: "Celebrity Manicures and Hand Model Doubles"
 description: "Nails are important indicators of fashion and glamour. With a little polish and a lot of innovational prowess, you can make your nails look incredibly lovely and dazzling."
 pubDate: "Jan 14 2023"
-heroImage: "//handmodels.com/wp-content/uploads/2022/08/image-6.jpg"
+heroImage: "/assets/images/image-6.jpg"
 ---
 Nails are important indicators of fashion and glamour. With a little polish and a lot of innovational prowess, you can make your nails look incredibly lovely and dazzling. Now, there are different ways to beautify the decoration of nails. These new procedures are increasing and becoming very prevalent. To ascertain these facts, even public figures put a lot of time and energy into their manicures as they pick their matching outfits. It would seem that spot-on manicures are vital for every red-carpet event.
 

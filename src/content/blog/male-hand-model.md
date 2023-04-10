@@ -2,7 +2,7 @@
 title: "Male Hand Model"
 description: "“I’m a hand model, mama. A finger jockey. We think differently than the face and body boys. We’re a different breed.” — Zoolander, The World’s Greatest Hand Model"
 pubDate: "Jan 02 2023"
-heroImage: "//handmodels.com/wp-content/uploads/2022/08/image-4.jpg"
+heroImage: "/assets/images/image-4.jpg"
 ---
 “I’m a hand model, mama. A finger jockey. We think differently than the face and body boys. We’re a different breed.”— Zoolander, The World’s Greatest Hand Model
 

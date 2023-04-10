@@ -2,7 +2,7 @@
 title: "How to Become a Hand Model: A Comprehensive Step-By-Step Guide"
 description: "Discover the world of hand modeling and learn how to become a successful hand model with this detailed guide."
 pubDate: "Jan 08 2023"
-heroImage: "//handmodels.com/wp-content/uploads/2022/08/image-1.png"
+heroImage: "/assets/images/image-1.png"
 ---
 
 ## What is a Hand Model?
